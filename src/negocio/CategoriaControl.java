@@ -16,10 +16,12 @@ public class CategoriaControl {
     private final CategoriaDAO DATOS;
     private Categoria obj;
     private DefaultTableModel modeloTabla;
+    public int registroMostrado;
     
     public CategoriaControl(){
         this.DATOS = new CategoriaDAO();
         this.obj = new Categoria();
+        this.registroMostrado = 0;
     }
     
     public DefaultTableModel listar(String texto){
@@ -31,6 +33,7 @@ public class CategoriaControl {
         
         String estado;
         String[] registro = new String[4];
+        this.registroMostrado = 0;
         
         for(Categoria item:lista){
             if(item.isActivo()){
@@ -44,6 +47,7 @@ public class CategoriaControl {
             registro[2] = item.getDescripcion();
             registro[3] = estado;
             this.modeloTabla.addRow(registro);
+            this.registroMostrado = this.registroMostrado+1;
         }
         return this.modeloTabla;
         
@@ -66,18 +70,40 @@ public class CategoriaControl {
     }
     
     public String actualizar(int id, String nombre, String nombreAnt, String descripcion){
-        
+        if(nombre.equals(nombreAnt)){
+            obj.setId(id);
+            obj.setNombre(nombre);
+            obj.setDescripcion(descripcion);
+            if(DATOS.activar(id)){
+                return "OK";
+            }else{
+                return "Error en la actualizacion";
+            }
+        }
     }
     
     public String desactivar(int id){
-        
+        if(DATOS.desactivar(id)){
+            return "OK";
+        }else{
+            return "No se puede desactivar el registro";
+        }
     }
     
     public String activar(int id){
-        
+        if(DATOS.activar(id)){
+            return "OK";
+        }else{
+            return "No se puede activar el registro";
+        }
     }
     
     public int total(){
-        
+        return DATOS.total();
     }
+    
+    public int totalMostrado(){
+        return this.registroMostrado;
+    }
+    
 }
