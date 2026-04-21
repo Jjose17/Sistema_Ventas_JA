@@ -28,30 +28,27 @@ public class CategoriaControl {
         List<Categoria> lista = new ArrayList<>();
         lista.addAll(DATOS.listar(texto));
         
-        String[] titulos = ("id", "Nombre", "Descripcion", "Estado");
+           String[] titulos = {"id", "Nombre", "Descripcion", "Estado"};
         this.modeloTabla = new DefaultTableModel(null, titulos);
         
         String estado;
-        String[] registro = new String[4];
         this.registroMostrado = 0;
         
-        for(Categoria item:lista){
-            if(item.isActivo()){
-                estado = "Activo";
-            }else{
-                estado= "Inactivo";
-            }
+        for(Categoria item : lista){
+            estado = item.isActivo() ? "Activo" : "Inactivo";
             
+            String[] registro = new String[4];
             registro[0] = Integer.toString(item.getId());
             registro[1] = item.getNombre();
             registro[2] = item.getDescripcion();
             registro[3] = estado;
+            
             this.modeloTabla.addRow(registro);
-            this.registroMostrado = this.registroMostrado+1;
+            this.registroMostrado++;
         }
         return this.modeloTabla;
-        
     }
+    
     
     public String insertar(String nombre, String descripcion){
         if(DATOS.existe(nombre)){
@@ -106,4 +103,7 @@ public class CategoriaControl {
         return this.registroMostrado;
     }
     
+    //
+    
 }
+
