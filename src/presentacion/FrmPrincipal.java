@@ -59,6 +59,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Compras y Ventas");
 
+        Escritorio.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+
         mnuAlmacen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/images/almacen.png"))); // NOI18N
         mnuAlmacen.setText("Almacen");
 

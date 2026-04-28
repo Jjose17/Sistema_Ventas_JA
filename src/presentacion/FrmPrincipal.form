@@ -192,6 +192,13 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="Escritorio">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.CompoundBorderInfo">
+            <CompoundBorder/>
+          </Border>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa;    @Override &#xa;    protected void paintComponent(Graphics g){&#xa;        super.paintComponent(g);&#xa;        g.setColor(Color.white);&#xa;        g.fillRect(0,0,getWidth(), getHeight());&#xa;}&#xa;}"/>
       </AuxValues>
