@@ -26,7 +26,7 @@ public class CategoriaDAO implements CrudSimpleInterface<Categoria>{
     public List<Categoria> listar(String texto) {
         List<Categoria> registros = new ArrayList();
         try{
-            ps = CON.conectar().prepareStatement("SELECT * FROM Categoria WHERE nombre like¿?");
+            ps = CON.conectar().prepareStatement("SELECT * FROM Categoria WHERE nombre like ?");
         ps.setString(1, "%" + texto + "%");
         rs = ps.executeQuery();
         while(rs.next()){
