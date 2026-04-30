@@ -74,6 +74,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         mnuAlmacen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/presentacion/images/almacen.png"))); // NOI18N
         mnuAlmacen.setText("Almacen");
+        mnuAlmacen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuAlmacenActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem1.setText("Categoria");
@@ -180,6 +185,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void mnuAlmacenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAlmacenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuAlmacenActionPerformed
 
     /**
      * @param args the command line arguments

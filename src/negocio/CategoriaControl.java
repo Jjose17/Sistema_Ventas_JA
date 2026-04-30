@@ -72,7 +72,7 @@ public class CategoriaControl {
         obj.setNombre(nombre);
         obj.setDescripcion(descripcion);
         
-        if(DATOS.actualizar(obj)){   // 👈 CORREGIDO
+        if(DATOS.actualizar(obj)){   
             return "OK";
         }else{
             return "Error en la actualizacion";
@@ -85,7 +85,7 @@ public class CategoriaControl {
             obj.setNombre(nombre);
             obj.setDescripcion(descripcion);
             
-            if(DATOS.actualizar(obj)){   // 👈 CORREGIDO
+            if(DATOS.actualizar(obj)){   
                 return "OK";
             }else{
                 return "Error en la actualizacion";
