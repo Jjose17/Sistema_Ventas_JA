@@ -41,6 +41,6 @@ public class DetalleIngreso {
         this.subtotal = subtotal;
     }
     
-    
+    //
     
 }
