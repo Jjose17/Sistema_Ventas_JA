@@ -1,4 +1,4 @@
-
+//Hola
 package entidades;
 
 public class Articulo {
